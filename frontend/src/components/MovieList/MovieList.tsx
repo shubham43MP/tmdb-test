@@ -1,5 +1,5 @@
 import React from 'react';
-import { MovieListProps } from './Types';
+import { MovieListProps } from '../../utils/types';
 
 export const MovieList = ({ movies, onMovieClick }:MovieListProps) => {
   return (
