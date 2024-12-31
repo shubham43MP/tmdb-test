@@ -79,6 +79,11 @@ The dev server will start at localhost:5173
 - React Infinite Scroll Component: To implement infinite scrolling.
 - React Spinners: For loading indicators.
 
+## Screenshots
+
+![Movie Search Page](./screenshots/movieSearch.png?raw=true "Title")
+![Movie Details Page](./screenshots/movieDetails.png?raw=true "Title")
+
 ## Development Machine Specs
 - MacOS Sonoma
 - NodeJS v20.17
