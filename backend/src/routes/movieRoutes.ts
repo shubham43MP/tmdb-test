@@ -6,7 +6,7 @@ import {
 
 const router = Router();
 
-router.get("/getMovies", getMoviesController);
-router.get("/getMovieDetails", getMovieDetailsController);
+router.get("/", getMoviesController);
+router.get("/:imdbID", getMovieDetailsController);
 
 export default router;

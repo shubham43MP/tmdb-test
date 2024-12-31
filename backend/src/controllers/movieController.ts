@@ -1,17 +1,17 @@
 import { getMovies, getMovieDetails } from "../services/movieService";
 
-type GetMoviesRequestBody = {
+type GetMoviesQuery = {
   moviename: string;
   page: number;
 };
 
-type GetMovieDetailsRequestBody = {
+type GetMovieQuery = {
   imdbID: string;
 };
 
-export const getMoviesController = async (req: {body: GetMoviesRequestBody}, res: any) => {
+export const getMoviesController = async (req: {query: GetMoviesQuery}, res: any) => {
   try {
-    const { moviename, page } = req.body;
+    const { moviename, page } = req.query;
 
     if (!moviename) {
       return res.status(400).json({ error: "Movie name is required" });
@@ -26,10 +26,10 @@ export const getMoviesController = async (req: {body: GetMoviesRequestBody}, res
 };
 
 export const getMovieDetailsController = async (
-  req: {body: GetMovieDetailsRequestBody}, res: any
+  req: {params: GetMovieQuery}, res: any
 ) => {
   try {
-    const { imdbID } = req.body;
+    const { imdbID } = req.params;
 
     if (!imdbID) {
       return res.status(400).json({ error: "IMDb ID is required" });
