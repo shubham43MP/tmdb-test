@@ -1,7 +1,7 @@
-export const getMovies = async (moviename: string, page: number) => {
+export const getMovies = async (movieName: string, page: number) => {
   const apiKey = process.env.OMDB_API_KEY;
   const response = await fetch(
-    `http://www.omdbapi.com/?apikey=${apiKey}&s=${moviename}&page=${page}`
+    `http://www.omdbapi.com/?apikey=${apiKey}&s=${movieName}&page=${page}`
   );
   return response.json();
 };

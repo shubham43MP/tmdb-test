@@ -25,7 +25,7 @@ const useHome = () => {
       setLoading(true);
   
       try {
-        const response = await axios.get(`${baseUrl}/movies?moviename=${debouncedTerm}&page=${page}`);
+        const response = await axios.get(`${baseUrl}/movies?movieName=${debouncedTerm}&page=${page}`);
         const data = response.data;
   
         if (data.Search && data.Response) {
