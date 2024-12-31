@@ -7,6 +7,7 @@ import { SearchBar } from './SearchBar';
 import { Movie } from './Types';
 import { useDebounce } from '../hooks/useDebounce';
 import { MovieList } from './MovieList';
+import { baseUrl } from '../utils/constants';
 
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -28,10 +29,7 @@ const Home = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post('http://localhost:5000/getMovies', {
-        moviename: debouncedTerm,
-        page: page,
-      });
+      const response = await axios.get(`${baseUrl}/movies?moviename=${debouncedTerm}&page=${page}`);
       const data = response.data;
 
       if (data.Search && data.Response) {

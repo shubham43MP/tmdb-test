@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { ClipLoader } from 'react-spinners';
 import { MovieDetails } from './Types';
+import { baseUrl } from '../utils/constants';
 
 export const MovieDetail = () => {
   const { imdbID } = useParams<{ imdbID: string }>();
@@ -13,7 +14,7 @@ export const MovieDetail = () => {
   useEffect(() => {
     const fetchMovieDetails = async () => {
       try {
-        const response = await axios.post('http://localhost:5000/getMovieDetails', { imdbID });
+        const response = await axios.get(`${baseUrl}/movies/${ imdbID }`);
         const data: MovieDetails = response.data;
         if (response.statusText) {
           setMovie(data);
