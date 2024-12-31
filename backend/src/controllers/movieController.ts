@@ -1,7 +1,7 @@
 import { getMovies, getMovieDetails } from "../services/movieService";
 
 type GetMoviesQuery = {
-  moviename: string;
+  movieName: string;
   page: number;
 };
 
@@ -11,13 +11,13 @@ type GetMovieQuery = {
 
 export const getMoviesController = async (req: {query: GetMoviesQuery}, res: any) => {
   try {
-    const { moviename, page } = req.query;
+    const { movieName, page } = req.query;
 
-    if (!moviename) {
+    if (!movieName) {
       return res.status(400).json({ error: "Movie name is required" });
     }
 
-    const movies = await getMovies(moviename, page);
+    const movies = await getMovies(movieName, page);
     res.json(movies);
   } catch (err) {
     console.error(err);
