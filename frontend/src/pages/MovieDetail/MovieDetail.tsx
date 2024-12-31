@@ -2,8 +2,8 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { ClipLoader } from 'react-spinners';
-import { MovieDetails } from './Types';
-import { baseUrl } from '../utils/constants';
+import { MovieDetails } from '../../utils/types';
+import { baseUrl } from '../../utils/constants';
 
 export const MovieDetail = () => {
   const { imdbID } = useParams<{ imdbID: string }>();

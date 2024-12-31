@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './component/Home';
-import { MovieDetail } from './component/MovieDetail';
+import { Home, MovieDetail } from './pages/';
 
 function App() {
   return (
